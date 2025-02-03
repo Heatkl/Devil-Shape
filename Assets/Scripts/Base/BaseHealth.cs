@@ -11,7 +11,7 @@ public class BaseHealth : MonoBehaviour
 
     private void Start()
     {
-        Init(100);
+        Init(10);
     }
     public void Init(int health)
     {
@@ -26,7 +26,7 @@ public class BaseHealth : MonoBehaviour
         healthSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
-            OnDeath?.Invoke(gameObject);
+            FindAnyObjectByType<GameManager>().ExitGame();
         }
     }
 }

@@ -27,11 +27,11 @@ public class LevelConfig : ScriptableObject
         _numberOfWaves = numberOfWaves; _safeTime = safeTimeAfterWave; _waveFactor = waveFactor;
     }
 
-    private void OnValidate()
-    {
-        if (waves == null || waves.Length != numberOfWaves)
-        waves = new WaveSettings[numberOfWaves];
-    }
+    //private void OnValidate()
+    //{
+    //    if (waves == null || waves.Length != numberOfWaves)
+    //    waves = new WaveSettings[numberOfWaves];
+    //}
 }
 
 [System.Serializable]

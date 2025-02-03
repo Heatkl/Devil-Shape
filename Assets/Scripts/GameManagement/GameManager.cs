@@ -60,15 +60,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void ChangeWaves(int waves)
+    {
+        currentWave = waves;
+        uiManager.UpdateWaves(currentWave);
+    }
     void ChangeEnemies(int enemies)
     {
         totalEnemies = enemies;
         uiManager.UpdateEnemies(totalEnemies);
     }
 
-    void ChangeWaves(int waves)
-    {
-        currentWave = waves;
-        uiManager.UpdateWaves(currentWave);
-    }
+    
 }

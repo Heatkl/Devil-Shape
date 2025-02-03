@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624f55ce38ef578499596de1d181b093, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  numberOfWaves: 4
+  numberOfWaves: 5
   safeTimeAfterWave: 4.1
-  waveFactor: 0.5
+  waveFactor: 1
   waves:
   - waveReward: 10
-    spawnType: 0
+    spawnType: 1
     enemies:
     - enemyConfig: {fileID: 11400000, guid: 7423d9a057484c84789b122851536f67, type: 2}
       timeBetweenEnemiesSpawn: 1
@@ -29,13 +29,13 @@ MonoBehaviour:
       timeBetweenEnemiesSpawn: 0.2
       waveEnemiesCount: 50
   - waveReward: 30
-    spawnType: 0
+    spawnType: 1
     enemies:
     - enemyConfig: {fileID: 11400000, guid: 89a2d9c0b0df8d74fa0c54a6befc0711, type: 2}
       timeBetweenEnemiesSpawn: 5
       waveEnemiesCount: 5
   - waveReward: 40
-    spawnType: 0
+    spawnType: 1
     enemies:
     - enemyConfig: {fileID: 11400000, guid: 7423d9a057484c84789b122851536f67, type: 2}
       timeBetweenEnemiesSpawn: 1
@@ -46,3 +46,27 @@ MonoBehaviour:
     - enemyConfig: {fileID: 11400000, guid: 89a2d9c0b0df8d74fa0c54a6befc0711, type: 2}
       timeBetweenEnemiesSpawn: 5
       waveEnemiesCount: 10
+  - waveReward: 40
+    spawnType: 1
+    enemies:
+    - enemyConfig: {fileID: 11400000, guid: 7423d9a057484c84789b122851536f67, type: 2}
+      timeBetweenEnemiesSpawn: 1
+      waveEnemiesCount: 20
+    - enemyConfig: {fileID: 11400000, guid: 5f23e2cbe8e54204f9d021e53e2c603d, type: 2}
+      timeBetweenEnemiesSpawn: 0.5
+      waveEnemiesCount: 50
+    - enemyConfig: {fileID: 11400000, guid: 89a2d9c0b0df8d74fa0c54a6befc0711, type: 2}
+      timeBetweenEnemiesSpawn: 5
+      waveEnemiesCount: 10
+    - enemyConfig: {fileID: 11400000, guid: 5f23e2cbe8e54204f9d021e53e2c603d, type: 2}
+      timeBetweenEnemiesSpawn: 0.2
+      waveEnemiesCount: 100
+    - enemyConfig: {fileID: 11400000, guid: 89a2d9c0b0df8d74fa0c54a6befc0711, type: 2}
+      timeBetweenEnemiesSpawn: 5
+      waveEnemiesCount: 20
+    - enemyConfig: {fileID: 11400000, guid: 5f23e2cbe8e54204f9d021e53e2c603d, type: 2}
+      timeBetweenEnemiesSpawn: 0.1
+      waveEnemiesCount: 100
+    - enemyConfig: {fileID: 11400000, guid: 89a2d9c0b0df8d74fa0c54a6befc0711, type: 2}
+      timeBetweenEnemiesSpawn: 2
+      waveEnemiesCount: 40

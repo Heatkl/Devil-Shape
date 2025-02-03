@@ -2,9 +2,136 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+using System;
+using System.Collections;
+using UnityEngine;
+
 public class EnemySpawner : MonoBehaviour
 {
-    public static event Action OnWaveCleared;
+    public event Action OnWaveCleared;
+
+    [Header("Spawn Settings")]
+    public Transform spawnPoint;
+    public Transform destinationPoint;
+    private int aliveEnemies = 0;
+
+    [Header("References")]
+    public EnemyPool enemyPool;
+
+    private WaveSettings currentWave;
+    private float waveFactor = 1.1f;
+    public void StartWaveSpawn(WaveSettings waveSettings, float waveFactor)
+    {
+        this.waveFactor = waveFactor;
+        currentWave = waveSettings;
+        StartCoroutine(SpawnWave());
+    }
+
+    private IEnumerator SpawnWave()
+    {
+        switch (currentWave.spawnType)
+        {
+            case EnemySpawnType.Together:
+                yield return StartCoroutine(SpawnTogether());
+                break;
+
+            case EnemySpawnType.OneByOne:
+                yield return StartCoroutine(SpawnOneByOne());
+                break;
+
+            case EnemySpawnType.Random:
+                yield return StartCoroutine(SpawnRandom());
+                break;
+        }
+
+        while (aliveEnemies != 0)
+        {
+            yield return null;
+        }
+        
+            OnWaveCleared?.Invoke();
+            Debug.LogWarning("ClearedInSpawner");
+        
+    }
+
+    private IEnumerator SpawnTogether()
+    {
+        foreach (var enemyWave in currentWave.enemies)
+        {
+            for (int i = 0; i < enemyWave.waveEnemiesCount; i++)
+            {
+                SpawnEnemy(enemyWave.enemyConfig);
+            }
+        }
+        yield break;
+    }
+
+    private IEnumerator SpawnOneByOne()
+    {
+        foreach (var enemyWave in currentWave.enemies)
+        {
+            for (int i = 0; i < enemyWave.waveEnemiesCount; i++)
+            {
+                SpawnEnemy(enemyWave.enemyConfig);
+                yield return new WaitForSeconds(enemyWave.timeBetweenEnemiesSpawn);
+            }
+        }
+    }
+
+    private IEnumerator SpawnRandom()
+    {
+        while (HasEnemiesLeft())
+        {
+            foreach (var enemyWave in currentWave.enemies)
+            {
+                if (enemyWave.waveEnemiesCount > 0)
+                {
+                    SpawnEnemy(enemyWave.enemyConfig);
+                    enemyWave.waveEnemiesCount--;
+                    yield return new WaitForSeconds(enemyWave.timeBetweenEnemiesSpawn);
+                }
+            }
+        }
+    }
+
+    private bool HasEnemiesLeft()
+    {
+        foreach (var enemyWave in currentWave.enemies)
+        {
+            if (enemyWave.waveEnemiesCount > 0) return true;
+        }
+        return false;
+    }
+
+    private void SpawnEnemy(EnemyConfig enemyConfig)
+    {
+        GameObject enemy = Instantiate(enemyConfig.enemyPrefab, spawnPoint.position, Quaternion.identity);
+        enemy.GetComponent<EnemyController>().Init(enemyConfig.rewardPerUnit, destinationPoint.position, enemyConfig.speed, waveFactor);
+
+        EnemyHealth health = enemy.GetComponent<EnemyHealth>();
+        health.OnDeath += HandleEnemyDeath;
+
+        aliveEnemies++;
+        GameActions.EnemyChange.Invoke(aliveEnemies);
+    }
+
+    private void HandleEnemyDeath(EnemyHealth enemy)
+    {
+        aliveEnemies--;
+        GameActions.EnemyChange.Invoke(aliveEnemies);
+        enemy.OnDeath -= HandleEnemyDeath;
+        enemyPool.ReturnEnemy(enemy.gameObject);
+
+        //if (aliveEnemies <= 0)
+        //{
+        //    OnWaveCleared?.Invoke();
+        //}
+    }
+}
+
+/* public class EnemySpawner : MonoBehaviour
+{
+    public event Action OnWaveCleared;
 
     [Header("Spawn Settings")]
     public Transform spawnPoint;
@@ -33,6 +160,8 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(timeBetweenSpawn);
             GameActions.EnemyChange.Invoke(aliveEnemies);
         }
+
+
     }
 
     private void SpawnEnemy()
@@ -62,4 +191,4 @@ public class EnemySpawner : MonoBehaviour
             OnWaveCleared?.Invoke();
         }
     }
-}
+}*/
