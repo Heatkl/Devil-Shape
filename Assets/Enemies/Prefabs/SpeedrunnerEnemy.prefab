@@ -482,6 +482,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46a94a9c5e1d61a4e9a99d7c3b22d248, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6291680042998674699, guid: 46a94a9c5e1d61a4e9a99d7c3b22d248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

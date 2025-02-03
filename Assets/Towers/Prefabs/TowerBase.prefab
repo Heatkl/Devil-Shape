@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5296813633618315714
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -53.43
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -20.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ccf711df493d5964890e575dd81865a6, type: 2}
+    - target: {fileID: 919132149155446097, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      propertyPath: m_Name
+      value: TowerBase
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1876722215788204460}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7130926840124775975}
+  m_SourcePrefab: {fileID: 100100000, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+--- !u!1 &4990945229693072531 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+  m_PrefabInstance: {fileID: 5296813633618315714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1876722215788204460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990945229693072531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b26df9ab4e671469336120e565ea34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hoverColor: {r: 1, g: 0.5803922, b: 0, a: 0}
+  MouseEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  MouseExit:
+    m_PersistentCalls:
+      m_Calls: []
+  MouseDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BuildingUI, Assembly-CSharp
+        m_MethodName: SetBuildingUI
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5622944876711210537}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+--- !u!136 &7130926840124775975
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4990945229693072531}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.011801994
+  m_Height: 0.019999996
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0.0018019951}
+--- !u!4 &5622944876711210537 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ce5a072c52430cb4e8f82d2702470b70, type: 3}
+  m_PrefabInstance: {fileID: 5296813633618315714}
+  m_PrefabAsset: {fileID: 0}

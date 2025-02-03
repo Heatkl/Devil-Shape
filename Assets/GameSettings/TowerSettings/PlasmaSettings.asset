@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a059a7b30ed22074ab179d83fdb3709a, type: 3}
   m_Name: PlasmaSettings
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 3644363406029251257, guid: 72b925b87e537d94aa0f59b647359077, type: 3}
+  towerProjectilePrefab: {fileID: 3593366958476168964, guid: 2a544c1f814016c4387ee8a3b610f0a1, type: 3}
+  towerType: 0
+  towerDamage: 200
+  towerRange: 10
+  towerRecharge: 3
+  towerCost:
+    magicEssence: 10
+    chromite: 30
+    uvarovite: 50

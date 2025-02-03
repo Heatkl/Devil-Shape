@@ -302,7 +302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 33e0a0ad8baee96459b296406131f8e0, type: 3}
       propertyPath: m_Name
-      value: thief_run
+      value: ThiefEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 33e0a0ad8baee96459b296406131f8e0, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1330755669629619180, guid: 33e0a0ad8baee96459b296406131f8e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

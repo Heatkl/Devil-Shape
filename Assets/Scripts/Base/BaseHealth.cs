@@ -9,6 +9,10 @@ public class BaseHealth : MonoBehaviour
 
     [SerializeField] private Slider healthSlider;
 
+    private void Start()
+    {
+        Init(100);
+    }
     public void Init(int health)
     {
         currentHealth = health;

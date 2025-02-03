@@ -1,6 +1,8 @@
 using UnityEngine;
 
-public class IAttackable
+public interface IAttackable
 {
-    
+    void Attack();
+
+        
 }

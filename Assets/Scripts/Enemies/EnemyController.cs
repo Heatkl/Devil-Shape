@@ -6,20 +6,22 @@ public class EnemyController : MonoBehaviour
 
     [SerializeField] GameObject deathEffect;
 
+    private GameManager gameManager;
     private EnemyMovement movement;
     private EnemyHealth health;
-    private EnemyReward reward;
+    private ResourcesSet reward;
 
     private EnemyType enemyType;
 
 
 
-    public void Init(EnemyReward rewardSettings, Vector3 destinationPoint, float speed)
+    public void Init(ResourcesSet rewardSettings, Vector3 destinationPoint, float speed)
     {
         movement = GetComponent<EnemyMovement>();
         health = GetComponent<EnemyHealth>();
+        gameManager = FindAnyObjectByType<GameManager>();
 
-        reward = new EnemyReward(rewardSettings);
+        reward = new ResourcesSet(rewardSettings);
 
         health.OnDeath += HandleDeath;
 
@@ -27,9 +29,9 @@ public class EnemyController : MonoBehaviour
         health.Init(enemyConfig.maxHealth, 1);
     }
 
-    private void HandleDeath(GameObject enemy)
+    private void HandleDeath(EnemyHealth enemy)
     {
-        //GameManager.Instance.AddResources(reward.magicEssence, reward.chromite, reward.uvarovite);
+        gameManager.AddResources(reward);
         Instantiate(deathEffect, transform.position, transform.rotation);
         
     }

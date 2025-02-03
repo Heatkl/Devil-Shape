@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a059a7b30ed22074ab179d83fdb3709a, type: 3}
   m_Name: ElectricSettings
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 6828018203396127605, guid: 8e7399d93942f604c9b4c36df4294394, type: 3}
+  towerProjectilePrefab: {fileID: 2093774632212877581, guid: cb0712fe7f1cc2f48bbb01b41d2359e1, type: 3}
+  towerType: 2
+  towerDamage: 30
+  towerRange: 8
+  towerRecharge: 0.5
+  towerCost:
+    magicEssence: 5
+    chromite: 50
+    uvarovite: 30

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public event Action<GameObject> OnDeath;
+    public event Action<EnemyHealth> OnDeath;
     private int currentHealth;
     private int onDieDamage;
 
@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         healthSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
-            OnDeath?.Invoke(gameObject);
+            OnDeath?.Invoke(this);
         }
     }
 
@@ -34,7 +34,7 @@ public class EnemyHealth : MonoBehaviour
         if (health != null)
         {
             health.TakeDamage(onDieDamage);
-            OnDeath?.Invoke(gameObject);
+            OnDeath?.Invoke(this);
         }
     }
 }

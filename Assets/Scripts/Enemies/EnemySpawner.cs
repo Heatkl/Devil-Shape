@@ -15,9 +15,9 @@ public class EnemySpawner : MonoBehaviour
     [Header("References")]
     public EnemyPool enemyPool; // Ссылка на пул врагов
 
-    private EnemyReward rewardSettings;
+    private ResourcesSet rewardSettings;
 
-    public void StartWaveSpawn(int enemyCount, EnemyReward reward)
+    public void StartWaveSpawn(int enemyCount, ResourcesSet reward)
     {
         rewardSettings = reward;
         StartCoroutine(SpawnWave(enemyCount));
@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
             SpawnEnemy();
             aliveEnemies++;
             yield return new WaitForSeconds(timeBetweenSpawn);
+            GameActions.EnemyChange.Invoke(aliveEnemies);
         }
     }
 
@@ -45,15 +46,15 @@ public class EnemySpawner : MonoBehaviour
         health.OnDeath += HandleEnemyDeath;
     }
 
-    private void HandleEnemyDeath(GameObject enemy)
+    private void HandleEnemyDeath(EnemyHealth enemy)
     {
         aliveEnemies--;
-
+        GameActions.EnemyChange.Invoke(aliveEnemies);
         // Отписываемся от события, чтобы избежать утечек памяти
-        enemy.GetComponent<EnemyHealth>().OnDeath -= HandleEnemyDeath;
+        enemy.OnDeath -= HandleEnemyDeath;
 
         // Возвращаем врага в пул
-        enemyPool.ReturnEnemy(enemy);
+        enemyPool.ReturnEnemy(enemy.gameObject);
 
         // Если все враги убиты, вызываем событие
         if (aliveEnemies <= 0)

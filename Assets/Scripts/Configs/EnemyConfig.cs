@@ -14,7 +14,7 @@ public class EnemyConfig : ScriptableObject
     [Tooltip("Скорость перемещения противника в м/с")]
     public float speed;
     [Tooltip("Количество награды за уничтожение юнита (увеличивается от коэффициента)")]
-    public EnemyReward rewardPerUnit; 
+    public ResourcesSet rewardPerUnit; 
 }
 
 public enum EnemyType

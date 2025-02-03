@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a059a7b30ed22074ab179d83fdb3709a, type: 3}
   m_Name: CannonSettings
   m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 7360054560582161596, guid: 5be41623733ff354480b2d6534ef6ad4, type: 3}
+  towerProjectilePrefab: {fileID: 263015146394322974, guid: 51fa115666c6553469c136d6d764cb87, type: 3}
+  towerType: 0
+  towerDamage: 30
+  towerRange: 6
+  towerRecharge: 0.5
+  towerCost:
+    magicEssence: 0
+    chromite: 10
+    uvarovite: 0
