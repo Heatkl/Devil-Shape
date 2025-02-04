@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624f55ce38ef578499596de1d181b093, type: 3}
   m_Name: Level2
   m_EditorClassIdentifier: 
-  numberOfWaves: 5
+  numberOfWaves: 3
   safeTimeAfterWave: 4.1
   waveFactor: 2
   waves:
