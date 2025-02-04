@@ -4,12 +4,15 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private BuildingUI buildingPanel;
-    [Header("TopPanel")]
+    [Header("Top Panel")]
     [SerializeField] TMP_Text enemiesText;
     [SerializeField] TMP_Text wavesText;
     [SerializeField] TMP_Text chromiteText;
     [SerializeField] TMP_Text uvaroviteText;
     [SerializeField] TMP_Text essenseText;
+    [Header("Finish Panels")]
+    [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject losePanel;
     public void OpenTowerUpdate()
     {
 
@@ -45,4 +48,16 @@ public class UIManager : MonoBehaviour
     {
         wavesText.text = "Waves " + waves;
     }
+
+    public void WinUI()
+    {
+        winPanel.SetActive(true);
+    }
+
+    public void LoseUI()
+    {
+        losePanel.SetActive(true);
+    }
+
+
 }

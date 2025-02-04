@@ -26,7 +26,8 @@ public class BaseHealth : MonoBehaviour
         healthSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
-            FindAnyObjectByType<GameManager>().ExitGame();
+            FindAnyObjectByType<UIManager>().LoseUI();
+            Time.timeScale = 0;
         }
     }
 }

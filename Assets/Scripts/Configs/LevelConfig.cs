@@ -14,7 +14,7 @@ public class LevelConfig : ScriptableObject
     public float safeTimeAfterWave = 10f;
    
     [Tooltip("Коэффициент увеличения награды и сложности монстра, зависящий от волны (n * waveFactor)")]
-    [Range(0f, 1f)]
+    [Range(1f, 10f)]
     public float waveFactor = 0;
 
     [Header("Wave Settings")]

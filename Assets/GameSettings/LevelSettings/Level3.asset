@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 624f55ce38ef578499596de1d181b093, type: 3}
-  m_Name: Level1
+  m_Name: Level3
   m_EditorClassIdentifier: 
   numberOfWaves: 5
   safeTimeAfterWave: 4.1
-  waveFactor: 1.5
+  waveFactor: 3
   waves:
   - waveReward: 10
     spawnType: 1

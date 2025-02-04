@@ -11,6 +11,11 @@ public class LevelManager : MonoBehaviour
     public int currentWave = 0;
     public float safeTimeAfterWave;
     public float waveFactor;
+
+    private void Awake()
+    {
+        levelConfig = GLOBAL.level;
+    }
     void Start()
     {
         gameManager = FindAnyObjectByType<GameManager>();
@@ -50,12 +55,12 @@ public class LevelManager : MonoBehaviour
 
     void WinLevel()
     {
-        GameActions.IncreaseScore.Invoke(2);
+        
     }
 
     void StartWave()
     {
-        enemySpawner.StartWaveSpawn(levelConfig.waves[currentWave-1], levelConfig.waveFactor +1);//levelConfig.waves[currentWave].enemies[0].waveEnemiesCount, levelConfig.waves[currentWave].enemies[0].enemyConfig.rewardPerUnit);
+        enemySpawner.StartWaveSpawn(levelConfig.waves[currentWave-1], levelConfig.waveFactor);//levelConfig.waves[currentWave].enemies[0].waveEnemiesCount, levelConfig.waves[currentWave].enemies[0].enemyConfig.rewardPerUnit);
     }
 
     IEnumerator WaitUntilWaveSpawn()
@@ -69,7 +74,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            //Win
+            FindAnyObjectByType<UIManager>().WinUI();
         }
     }
     

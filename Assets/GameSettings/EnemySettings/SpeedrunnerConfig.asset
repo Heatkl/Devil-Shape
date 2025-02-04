@@ -19,5 +19,5 @@ MonoBehaviour:
   speed: 0
   rewardPerUnit:
     magicEssence: 0
-    chromite: 3
+    chromite: 1
     uvarovite: 1

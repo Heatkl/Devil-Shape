@@ -27,7 +27,13 @@ public class GameManager : MonoBehaviour
     }
     public void LoadScene(string sceneName)
     {
+        UpdateTimeScale(1);
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void SetNextGameLevel(LevelConfig level)
+    {
+        GLOBAL.level = level;
     }
 
     public void ExitGame()
